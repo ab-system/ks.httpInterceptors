@@ -14,7 +14,7 @@
                     $modal.open(
                     {
                         size: "lg",
-                        templateUrl: "/HtmlTemplates/ExceptionModal.html",
+                        templateUrl: "/html/ExceptionModal.html",
                         controller:["$scope",
                             function($scope) {
                                 $scope.statusText = rejection.statusText;
