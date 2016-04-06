@@ -10,7 +10,7 @@
                         return $q.reject(rejection);
                     }
                     
-                    var $modal = $injector.get('$modal');
+                    var $modal = $injector.get('$uibModal');
                     $modal.open(
                     {
                         size: "lg",
@@ -98,19 +98,19 @@
                     return config;
                 },
                 requestError: function(rejection) {
-                    if (rejection.config.lockScreen) {
+                    if (rejection.config && rejection.config.lockScreen) {
                         longOperationService.endLoad();
                     }
                     return $q.reject(rejection);
                 },
                 response: function(response) {
-                    if (response.config.lockScreen) {
+                    if (response.config && response.config.lockScreen) {
                         longOperationService.endLoad();
                     }
                     return response;
                 },
                 responseError: function(rejection) {
-                    if (rejection.config.lockScreen) {
+                    if (rejection.config && rejection.config.lockScreen) {
                         longOperationService.endLoad();
                     }
                     return $q.reject(rejection);
