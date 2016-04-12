@@ -61,7 +61,7 @@
 
                 response: function(response) {
                     if (response.config.isSave) {
-                        if (response.data.Data && (response.data.Data.StatusCode || response.data.Data.ReasonPhrase)) {
+                        if (response.data && response.data.Data && (response.data.Data.StatusCode || response.data.Data.ReasonPhrase)) {
                             return response;
                         }
                         var saveSuccessMessage = "Сохранение объекта прошло успешно",
